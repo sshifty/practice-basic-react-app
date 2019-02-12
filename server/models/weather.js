@@ -1,6 +1,6 @@
 const request = require('request-promise');
 
-const API_KEY='311efb76ccd0a5f6da43f255ec1707eb';
+const API_KEY="311efb76ccd0a5f6da43f255ec1707eb";
 
 class Weather{
     static retrieveByCity(city,callback){
@@ -11,7 +11,7 @@ class Weather{
             callback(res);
         }).catch(err=>{
             console.log(err);
-            callback({error:'Could not reach OpenWeatherApp API!'});
+            callback({error:`Could not reach OpenWeatherApp API! u entered: ${city}`});
         })
     }
 }

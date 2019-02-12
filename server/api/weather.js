@@ -4,10 +4,12 @@ const Weather =  require('../models/weather');
 const router=express.Router();
 
 router.get('/:city',(req,res)=>{
-    const city=req.body.city;
+    const city=req.params.city;
 
     Weather.retrieveByCity(city,(err,weather)=>{
-        if(err) return res.json(err);
+        if(err){
+            return res.json(err);
+        } 
         return res.json(weather);
     });
 });
